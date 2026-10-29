@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "denuncias-api-collection",
+		"name": "API Denuncias Ciudadanas",
+		"description": "Colección de pruebas para los 5 endpoints de la API de Denuncias Ciudadanas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Registrar denuncia (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": \"71829304\",\n    \"fecha\": \"2026-10-28 10:30:00\",\n    \"tipo\": \"ROBO\",\n    \"direccion\": \"Av. Bolognesi 450, Chiclayo\",\n    \"descripcion\": \"Robo de celular y billetera en paradero\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/denuncias/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"denuncias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Obtener denuncias paginadas (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/denuncias/?offset=0&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"denuncias",
+						""
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Obtener denuncia por ID (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/denuncias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"denuncias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Obtener denuncias por ciudadano DNI (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/denuncias/ciudadano/71829304",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"denuncias",
+						"ciudadano",
+						"71829304"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Atender denuncia (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/denuncias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"denuncias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+
